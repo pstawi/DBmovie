@@ -46,13 +46,26 @@ const MovieCard = ({props}) => {
             {/* Zone cliquable de la carte */}
             <CardActionArea sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }} onClick={handleClick}>
                 {/* Image d'affiche du film */}
-                <CardMedia
-                    component="img"
-                    height="280"
-                    image={`${poster}${props.poster_path}`}
-                    alt={props.title}
-                    sx={{ objectFit: 'cover', flexShrink: 0 }}
-                />
+                <Box sx={{ 
+                    width: '100%', 
+                    height: '320px',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}>
+                    <CardMedia
+                        component="img"
+                        image={`${poster}${props.poster_path}`}
+                        alt={props.title}
+                        sx={{ 
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover', 
+                            flexShrink: 0 
+                        }}
+                    />
+                </Box>
                 {/* Contenu de la carte (titre, note, résumé) */}
                 <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
                     {/* Titre du film */}

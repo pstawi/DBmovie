@@ -35,3 +35,31 @@ export function getAllMovie() {
 export function getMovieById(id) {
     return client.get(`/movie/${id}`)
 }
+
+/**
+ * Fonction pour récupérer tous les acteurs populaires
+ * @returns {Promise} Promesse contenant la liste des acteurs populaires
+ */
+export function getAllActors() {
+    return client.get('/person/popular')
+}
+
+/**
+ * Fonction pour récupérer les détails d'un acteur spécifique
+ * @param {number} id - L'ID de l'acteur
+ * @returns {Promise} Promesse contenant les détails de l'acteur
+ */
+export function getActorById(id) {
+    return client.get(`/person/${id}`)
+}
+
+/**
+ * Fonction pour récupérer les crédits (acteurs) d'un film spécifique
+ * @param {number} id - L'ID du film
+ * @returns {Promise} Promesse contenant la liste des acteurs du film
+ */
+export function getMovieCredits(id) {
+    return client.get(`/movie/${id}/credits`)
+}
+
+

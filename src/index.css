@@ -1,0 +1,102 @@
+/* ============================================
+   Styles globaux CSS pour la taverne spatiale
+   ============================================ */
+
+/* Reset CSS et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style du body */
+body {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Élément html */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tous les éléments */
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+/* Texte sélectionnable */
+p, span, a, li, h1, h2, h3, h4, h5, h6 {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    user-select: text;
+}
+
+/* Boutons et éléments interactifs */
+button, a, input {
+    cursor: pointer;
+}
+
+input, textarea, select {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    user-select: text;
+}
+
+/* Listes */
+ul, ol {
+    list-style: none;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Vidéos */
+video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Code */
+code, pre {
+    font-family: 'Courier New', monospace;
+    background: rgba(157, 78, 221, 0.1);
+    border: 1px solid rgba(157, 78, 221, 0.3);
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+/* Modal/Dialog */
+.MuiBackdrop-root {
+    backdrop-filter: blur(5px);
+}
+
+/* Entrée au clavier pour l'accessibilité */
+:focus-visible {
+    outline: 2px solid #00D9FF;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Curseur personnalisé (optionnel) */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}

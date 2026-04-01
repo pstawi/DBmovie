@@ -12,7 +12,7 @@ import { MenuItem } from "@mui/material";
 
 /**
  * Composant Navbar - Barre de navigation de l'application
- * Permet de naviguer vers la page d'accueil (HomePage)
+ * Permet de naviguer vers la page d'accueil (HomePage) et la page des acteurs
  */
 const Navbar = () => {
     // Hook pour la navigation programmatique
@@ -22,8 +22,16 @@ const Navbar = () => {
      * Fonction de gestion du clic sur le menu accueil
      * Redirige vers la page d'accueil (/home)
      */
-    const handleClick = () => {
+    const handleClickHome = () => {
         navigate("/home");
+    }
+
+    /**
+     * Fonction de gestion du clic sur le menu acteurs
+     * Redirige vers la page des acteurs (/actors)
+     */
+    const handleClickActors = () => {
+        navigate("/actors");
     }
 
     return (
@@ -42,9 +50,15 @@ const Navbar = () => {
                         <MenuIcon />
                     </IconButton>
                     {/* Élément de menu Home avec gestionnaire de clic */}
-                    <MenuItem onClick={handleClick}>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            Home
+                    <MenuItem onClick={handleClickHome}>
+                        <Typography variant="h6" component="div" sx={{ mr: 3 }}>
+                            Films
+                        </Typography>
+                    </MenuItem>
+                    {/* Élément de menu Acteurs avec gestionnaire de clic */}
+                    <MenuItem onClick={handleClickActors}>
+                        <Typography variant="h6" component="div">
+                            Acteurs
                         </Typography>
                     </MenuItem>
                 </Toolbar>

@@ -13,7 +13,7 @@ import { BrowserRouter } from 'react-router-dom'
  * Point d'entrée de l'application React
  * Configure le rendu de la racine avec StrictMode et BrowserRouter
  */
-creatRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')).render(
   // StrictMode aide à identifier les problèmes potentiels en développement
   <StrictMode>
     {/* BrowserRouter permet la navigation entre les pages */}

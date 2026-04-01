@@ -1,0 +1,221 @@
+/* ============================================
+   Styles personnalisés pour la taverne spatiale
+   ============================================ */
+
+/* Fond principal avec effet de profondeur */
+body {
+    background: linear-gradient(135deg, #0A0A0A 0%, #1A1A2E 25%, #0A0A0A 50%, #16213E 75%, #0A0A0A 100%);
+    background-attachment: fixed;
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+    color: #FFFFFF;
+}
+
+/* Animation de changement de gradient */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Conteneur principal */
+#root {
+    min-height: 100vh;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(10, 10, 10, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #9D4EDD 0%, #00D9FF 100%);
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #C77DFF 0%, #48DBF8 100%);
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.8);
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-color: linear-gradient(180deg, #9D4EDD 0%, #00D9FF 100%) rgba(10, 10, 10, 0.8);
+    scrollbar-width: thin;
+}
+
+/* Lien par défaut */
+a {
+    color: #00D9FF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+}
+
+a:hover {
+    color: #48DBF8;
+    text-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+}
+
+/* Effet de néon pour les titres */
+.neon-title {
+    color: #9D4EDD;
+    text-shadow: 0 0 10px #9D4EDD, 0 0 20px #9D4EDD, 0 0 30px #9D4EDD, 0 0 40px #9D4EDD;
+    letter-spacing: 2px;
+}
+
+/* Effet de cyberspace pour les images */
+img {
+    filter: brightness(1.05) contrast(1.1);
+    transition: filter 0.3s ease;
+}
+
+img:hover {
+    filter: brightness(1.15) contrast(1.2) drop-shadow(0 0 15px rgba(0, 217, 255, 0.5));
+}
+
+/* Animation d'entrée pour les cartes */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Appliquer l'animation aux cartes */
+.MuiCard-root {
+    animation: slideInUp 0.5s ease-out;
+}
+
+/* Effet de lueur pour les conteneurs */
+.container {
+    position: relative;
+}
+
+/* Texte lumineux */
+.luminous-text {
+    color: #00D9FF;
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.7), 0 0 20px rgba(0, 217, 255, 0.4);
+}
+
+/* Bordure avec lueur */
+.glow-border {
+    border: 2px solid #9D4EDD;
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.3), inset 0 0 20px rgba(157, 78, 221, 0.1);
+}
+
+/* Bouton avec effet hover lumineux */
+.glow-button {
+    background: linear-gradient(135deg, #9D4EDD 0%, #7209B7 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.4);
+    transition: all 0.3s ease;
+}
+
+.glow-button:hover {
+    box-shadow: 0 0 25px rgba(157, 78, 221, 0.8), 0 0 35px rgba(0, 217, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Indicateur de chargement animé */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Effet de scintillement */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.twinkle {
+    animation: twinkle 1.5s ease-in-out infinite;
+}
+
+/* Lignes de grille subtiles */
+.grid-background {
+    background-image: 
+        linear-gradient(rgba(157, 78, 221, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(157, 78, 221, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* Dégradé de bordure */
+.gradient-border {
+    position: relative;
+    border: 1px solid;
+    border-image: linear-gradient(135deg, #9D4EDD, #00D9FF) 1;
+}
+
+/* Sélection de texte avec couleur thème */
+::selection {
+    background: linear-gradient(135deg, #9D4EDD 0%, #00D9FF 100%);
+    color: #FFFFFF;
+}
+
+::-moz-selection {
+    background: linear-gradient(135deg, #9D4EDD 0%, #00D9FF 100%);
+    color: #FFFFFF;
+}
+
+/* Transitions fluides par défaut */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Désactiver les transitions sur les animations */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Media queries pour responsivité */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .neon-title {
+        letter-spacing: 1px;
+        font-size: 1.5rem;
+    }
+}
