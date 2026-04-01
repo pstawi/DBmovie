@@ -35,6 +35,12 @@ const Navbar = () => {
         navigate("/actors");
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Gérer la soumission du formulaire de recherche
+        navigate(`/search?query=${event.target[0].value}`);
+    }
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             {/* Barre d'application avec position statique */}
@@ -62,7 +68,7 @@ const Navbar = () => {
                             Acteurs
                         </Typography>
                     </MenuItem>
-                    <Box component="form" onSubmit={}>
+                    <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', alignItems: 'center', ml: 'auto' }}>
                         <TextField
                             label="Rechercher un film..."
                             variant="outlined"

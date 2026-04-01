@@ -15,6 +15,8 @@ import { Route, Routes } from 'react-router-dom'
 // Importation du composant Navbar
 import Navbar from './components/Navbar'
 
+import SearchResultPage from './pages/SearchResultPage'
+
 /**
  * Composant principal de l'application ForeachFlix
  * Gère le routage entre les différentes pages
@@ -37,6 +39,8 @@ function App() {
           <Route path="/actors" element={<ActorsPage />} />
           {/* Route pour la page de détails d'un acteur (paramètre dynamique: id) */}
           <Route path="/actor/:id" element={<ActorDetailPage />} />
+
+          <Route path="/search" element={<SearchResultPage />} />
         </Routes>
       </div>
     </ThemeProvider>
