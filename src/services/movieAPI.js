@@ -23,8 +23,8 @@ export const client = axios.create({
  * Fonction pour récupérer tous les films populaires
  * @returns {Promise} Promesse contenant la liste des films populaires
  */
-export function getAllMovie() {
-    return client.get('/movie/popular')
+export function getAllMovie(page = 1) {
+    return client.get('/movie/popular', {params: {page}})
 }
 
 /**
@@ -40,8 +40,8 @@ export function getMovieById(id) {
  * Fonction pour récupérer tous les acteurs populaires
  * @returns {Promise} Promesse contenant la liste des acteurs populaires
  */
-export function getAllActors() {
-    return client.get('/person/popular')
+export function getAllActors(page = 1) {
+    return client.get('/person/popular', { params: { page } })
 }
 
 /**
@@ -62,4 +62,8 @@ export function getMovieCredits(id) {
     return client.get(`/movie/${id}/credits`)
 }
 
+
+export function searchMovies(query, page = 1) {
+    return client.get('/search/movie', { params: { query, page } })
+}
 

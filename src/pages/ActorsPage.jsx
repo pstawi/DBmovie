@@ -5,7 +5,7 @@ import { getAllActors } from "../services/movieAPI.js";
 // Importation du composant ActorCard
 import ActorCard from "../components/ActorCard.jsx";
 // Importation des composants Material-UI
-import { Container, Grid, Typography, Box, CircularProgress } from "@mui/material";
+import { Container, Grid, Typography, Box, CircularProgress, Pagination } from "@mui/material";
 
 /**
  * Composant ActorsPage - Page d'accueil des acteurs
@@ -19,6 +19,8 @@ const ActorsPage = () => {
     // État pour gérer les erreurs
     const [error, setError] = useState(null);
 
+    const [page, setPage] = useState(1);
+
     /**
      * Fonction pour récupérer les acteurs depuis l'API
      */
@@ -26,7 +28,7 @@ const ActorsPage = () => {
         try {
             setLoading(true);
             // Appel à l'API pour récupérer tous les acteurs populaires
-            const response = await getAllActors();
+            const response = await getAllActors(page);
             // Mise à jour de l'état avec les résultats
             setActors(response.data.results);
             setError(null);
@@ -38,12 +40,17 @@ const ActorsPage = () => {
         }
     }
 
+    const handleChangePage = (_event, value) => {
+        setPage(value);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     // Affichage des acteurs pour déboguer
     console.log(actors);
     // Exécution du chargement une fois au montage du composant
     useEffect(() => {
         fetchActors();
-    }, [])
+    }, [page]);
 
     return (
         <Container maxWidth="lg" sx={{ py: 4 }}>
@@ -56,7 +63,7 @@ const ActorsPage = () => {
                     Découvrez les acteurs les plus populaires
                 </Typography>
             </Box>
-
+            <Pagination count={500} color="secondary" page={page} onChange={handleChangePage} />
             {/* Affichage conditionnel : chargement, erreur ou contenu */}
             {loading ? (
                 // Spinner de chargement
@@ -79,6 +86,7 @@ const ActorsPage = () => {
                     ))}
                 </Grid>
             )}
+            <Pagination count={500} color="secondary" page={page} onChange={handleChangePage} />
         </Container>
     );
 }

@@ -8,7 +8,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { MenuItem } from "@mui/material";
+import { MenuItem, TextField } from "@mui/material";
+import SearchIcon from '@mui/icons-material/Search';
 
 /**
  * Composant Navbar - Barre de navigation de l'application
@@ -61,6 +62,17 @@ const Navbar = () => {
                             Acteurs
                         </Typography>
                     </MenuItem>
+                    <Box component="form" onSubmit={}>
+                        <TextField
+                            label="Rechercher un film..."
+                            variant="outlined"
+                            size="small"
+                        />
+                        <IconButton type="submit" color="secondary" aria-label="search">
+                            <SearchIcon />
+                        </IconButton>
+                    </Box>
+
                 </Toolbar>
             </AppBar>
         </Box>
